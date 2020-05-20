@@ -39,7 +39,7 @@ object Scanner extends App {
 
     Ports.foreach { port =>
       checkPort(port) foreach { done =>
-        if (done) println(s"${EOL}Connected to the [$port]") else printf(".")
+        if (done) println(s"${EOL}Connected to the [$port]")
       }
     }
   }
