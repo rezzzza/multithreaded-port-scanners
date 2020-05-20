@@ -1,12 +1,15 @@
 import java.net.{InetSocketAddress, Socket}
 import java.util.concurrent.TimeUnit
 
-import scala.concurrent.{ExecutionContext, Future}
-import ExecutionContext.Implicits.global
+import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
 import scala.concurrent.duration.Duration
 import scala.compat.Platform.EOL
 
 object Scanner extends App {
+
+  implicit val ec: ExecutionContextExecutor = ExecutionContext.fromExecutor(
+    new java.util.concurrent.ForkJoinPool(1000)
+  )
 
   val FutureTimeOut = Duration(4, TimeUnit.SECONDS)
   val TCPTimeOut = Duration(3, TimeUnit.SECONDS)
@@ -36,7 +39,7 @@ object Scanner extends App {
 
     Ports.foreach { port =>
       checkPort(port) foreach { done =>
-        if (done) println(s"{$EOL}Connected to the [$port]") else printf(".")
+        if (done) println(s"${EOL}Connected to the [$port]") else printf(".")
       }
     }
   }
