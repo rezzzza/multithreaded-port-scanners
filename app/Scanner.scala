@@ -36,7 +36,7 @@ object Scanner extends App {
 
     Ports.foreach { port =>
       checkPort(port) foreach { done =>
-        if (done) println(s"$EOL$port is open") else printf(".")
+        if (done) println(s"{$EOL}Connected to the [$port]") else printf(".")
       }
     }
   }
@@ -44,7 +44,9 @@ object Scanner extends App {
 
   private def getHost: String = {
     print("Enter your host: ")
-    scala.io.StdIn.readLine()
+    val host = scala.io.StdIn.readLine()
+    println(s"Trying to scan $host...")
+    host
   }
 
   main()
