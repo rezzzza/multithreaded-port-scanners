@@ -1,9 +1,9 @@
 # Multithreaded Port Scanners
 This repository contains the source code for some **Multithreaded Port Scanners** written in different programming languages in the standalone source files.
 
-- Scala
+- [Scala]()
 - Java
-- Python
+- [Python]()
 - Ruby
 - PHP
 - ...
@@ -17,11 +17,7 @@ We will use this codes to:
 
 ### How to run?
 
-#### Scala
-Make sure you have the Scala installed. ([How to install](https://www.scala-lang.org/download/))
-```
-scala {dir}/scala
-```
+There is a README for each programming language: ([Scala](), [Python]())
 
 ### Contributors
 _TODO_
