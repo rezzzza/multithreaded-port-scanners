@@ -1,6 +1,7 @@
 # ide
 .idea
 .vs
+.metals
 
 # mac
 .DS_Store
