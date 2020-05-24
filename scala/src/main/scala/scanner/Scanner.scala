@@ -17,7 +17,9 @@ object Scanner extends App {
   val Ports = Range(1, 65535)
 
   def main(): Unit = {
-    scan(getHost)
+    val host = getHost
+    println(s"Trying to scan $host...")
+    scan(host)
     synchronized {
       wait()
     }
@@ -48,9 +50,7 @@ object Scanner extends App {
 
   private def getHost: String = {
     print("Enter your host: ")
-    val host = scala.io.StdIn.readLine()
-    println(s"Trying to scan $host...")
-    host
+    scala.io.StdIn.readLine()
   }
 
   main()
