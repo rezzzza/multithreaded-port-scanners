@@ -1,7 +1,7 @@
 from socket import *
 
 def scan(host: str): 
-    def checkPort(port):
+    def check_port(port):
         try:
             s = socket(AF_INET, SOCK_STREAM)
             s.settimeout(3)
@@ -12,7 +12,7 @@ def scan(host: str):
             return False
     
     for p in range(1, 65535):
-        if checkPort(p):
+        if check_port(p):
             print('port {} is open!'.format(p))
 
 def get_host():
