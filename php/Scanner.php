@@ -22,7 +22,7 @@ function scanPort($host)
         }
     }
 
-    foreach(range(79,65535) as $port){
+    foreach(range(1,65535) as $port){
         if (checkPort($host, $port)) {
             echo "port [$port] : open!\n";
         }
