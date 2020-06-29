@@ -1,5 +1,4 @@
 # Concurrent Port Scanners
----
 
 ## Overview
 This repository contains the source code for some **Concurrent Port Scanners** written in different programming languages in the standalone source files.
